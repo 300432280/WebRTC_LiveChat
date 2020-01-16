@@ -1,0 +1,19 @@
+{
+  "name": "webrtc_livechat",
+  "version": "1.0.0",
+  "description": "live chat web app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/300432280/WebRTC_LiveChat.git"
+  },
+  "author": "TNT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/300432280/WebRTC_LiveChat/issues"
+  },
+  "homepage": "https://github.com/300432280/WebRTC_LiveChat#readme"
+}

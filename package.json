@@ -4,7 +4,8 @@
   "description": "live chat web app",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx watchify ./public/main.js -o ./public/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/300432280/WebRTC_LiveChat/issues"
   },
-  "homepage": "https://github.com/300432280/WebRTC_LiveChat#readme"
+  "homepage": "https://github.com/300432280/WebRTC_LiveChat#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "simple-peer": "^9.6.2",
+    "socket.io": "^2.3.0"
+  }
 }

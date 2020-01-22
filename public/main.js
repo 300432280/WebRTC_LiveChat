@@ -56,6 +56,7 @@ navigator.mediaDevices.getUserMedia({video:true, audio:true})
             video.srcObejct = stream
             video.class = 'embed-responsive-item'
             document.querySelector('#peerDiv').appendChild(video)
+            video.play()
         }
 
         function SessionActive(){

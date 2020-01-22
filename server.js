@@ -26,11 +26,11 @@ function Disconnect(){
         client--
 }
 
-fucntion SendOffer(offer){
+function SendOffer(offer){
     this.broadcast.emit("backoffer", offer)
 }
 
-fucntion SendOffer(data){
+function SendAnswer(data){
     this.broadcast.emit("backanswer", data)
 }
 

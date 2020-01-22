@@ -9,9 +9,10 @@ navigator.mediaDevices.getUserMedia({video:true, audio:true})
         socket.emit("NewClient")
         video.srcObject = stream
         video.play()
-
+        console.log('test11111')
         //to initilize peer
         function InitPeer(type) {
+            console.log('tes22222')
             var peer = new Peer({ initiator: (type == 'init') ? true:false, stream : stream, trickle : false})
             peer.on('stream', function(stream){
                 CreateVideo(stream)
@@ -25,6 +26,7 @@ navigator.mediaDevices.getUserMedia({video:true, audio:true})
 
         //create peer of type init
         function MakePeer(){
+            console.log('tes33333')
             client.gotAnswer = false
             var peer = InitPeer('init')
             peer.on(('signal'), function(data){
@@ -37,6 +39,7 @@ navigator.mediaDevices.getUserMedia({video:true, audio:true})
 
         // for the peer of type not init
         function FrontAnswer(offer){
+            console.log('test33333')
             var peer = InitPeer('notInit')
             peer.on('signal',(data)=>{
                 socket.emit('Answer', data)
@@ -45,12 +48,14 @@ navigator.mediaDevices.getUserMedia({video:true, audio:true})
         }
 
         function SignalAnswer(answer){
+            console.log('tes44444')
             client.gotAnswer = true
             var peer = client.peer
             peer.signal(answer)
         }
 
         function CreateVideo(stream){
+            console.log('tes55555')
             var vide = document.createElement('video')
             video.id = 'peerVideo'
             video.srcObejct = stream
@@ -60,9 +65,10 @@ navigator.mediaDevices.getUserMedia({video:true, audio:true})
         }
 
         function SessionActive(){
+            console.log('tes55555')
             document.write('busy, come back later')
         }
-
+        console.log('tes66666')
         socket.on('backoffer', FrontAnswer)
         socket.on('backanswer', SignalAnswer)
         socket.on('SessionActive', SessionActive)
